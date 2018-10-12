@@ -203,12 +203,7 @@ nav-link{
       text-align: left;
     }
   }
-  button{
-    width:80px;
-    height: 30px;
-    text-align: center;
-    padding-top: 0;
-  }
+  
   .card-title{
     font-weight: 600;
 
@@ -226,7 +221,6 @@ html {
 
 body {
   display: grid;
-  
   font-family: sans-serif;
   text-transform: uppercase;
 }
@@ -242,7 +236,13 @@ body {
   border-radius: 10px;
 }
 
+#image{
+  max-width:180px;
+}
 
+input[type=file]{
+padding:10px;
+background:rgb(255, 255, 255);}
 
 img {
   width: 290px;
@@ -268,7 +268,7 @@ img {
   text-transform: none;
   letter-spacing: 0;
   margin-bottom: 17px;
-  color: dark;
+  color: blanchedalmond;
   font-size: .7em;
   line-height: 1.6em;
   margin-right: 25px;
@@ -276,7 +276,7 @@ img {
 }
 
 button {
-  background: darken($light, 10%);
+  background: darken(wheat, 10%);
   padding: 10px;
   display: inline-block;
   outline: 0;
@@ -285,12 +285,13 @@ button {
   border-radius: 2px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: $white;
+  color: white;
   cursor: pointer;
-  &:hover {
-    background: $rose;
-    transition: all .4s ease-in-out;
-  }
+  
+}
+button:hover {
+  background: pink;
+  transition: all .4s ease-in-out;
 }
 
 .add {
@@ -303,15 +304,13 @@ button {
 
 .sizes {
   display: grid;
-  color: $pink;
+  color: pink;
   grid-template-columns: repeat(auto-fill, 30px);
   width: 60%;
   grid-gap: 4px;
   margin-left: 20px;
   margin-top: 5px;
-  &:hover {
-    cursor: pointer;
-  }
+  
 }
 
 .pick {
@@ -322,18 +321,19 @@ button {
 
 .size {
   padding: 9px;
-  border: 1px solid $light;
+  border: 1px solid wheat;
   font-size: 0.7em;
   text-align: center;
-  &:hover{
-    background: $rose;
-    color: $white;
-    transition: all .4s ease-in-out;
-  }
+  
+}
+size :hover{
+  background: pink;
+  color: white;
+  transition: all .4s ease-in-out;
 }
 
 .focus{
-  background: $rose;
-  color: $white;
+  background: rose;
+  color: white;
 }
 
