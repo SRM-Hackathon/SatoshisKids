@@ -57,11 +57,11 @@
                     
                 
                 <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-12 " id="search">
                                 
                                         
-                                          <input style="display:inline" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                          <button style="display:inline" class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+                                          <input id="searchinp" style="display:inline" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                          <button style="display:inline" class="btn btn-primary my-2 my-sm-0" type="submit" onclick="filtr()">Search</button>
                                         
                                       
                         </div>
@@ -79,7 +79,7 @@
                                 <form id="form">
                             <div class="form-group">
                                     <input type='file' onchange="readURL(this);" />
-                                    <img id="image" src="http://placehold.it/180" alt="your image" />
+                                    <img id="image" src="https://www.idokarate.com/wp-content/uploads/2017/04/default-image-800x600.jpg" alt="your image" />
                             </div>
                                         
                                 <div class="form-group">
@@ -102,43 +102,7 @@
                                 </form>
                         </div> 
                 </div>
-<<<<<<< HEAD
-            </div>
-            
-
-</div>                  
-                  
-<div id="sell" style="display:none">
-    <form id="form" onsubmit="submitForm()">
-    <div class="form-group">
-            <input type='file' onchange="readURL(this);" />
-            <img id="image" src="http://placehold.it/180" alt="your image" />
-    </div>
-                
-        <div class="form-group">
-                <label for="itemname">Item Name</label>
-                <input type="text" class="form-control" id="iteamname" aria-describedby="emailHelp" placeholder="Enter item name">
-            </div>
-            <div class="form-group">
-                <label for="itemname">Item Cost</label>
-                <input type="number" class="form-control" id="itemnumber" placeholder="Cost in INR">
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Product Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">I agree to the terms and conditions</label>
-            </div>
-            <button type="submit" class="btn btn-outline-secondary">Submit</button>
-        </form>
-</div>                                 
-
-                      
-=======
             </div>                      
->>>>>>> c56144e8832bbbf8d6413ccc985ff6df5b3a7a86
                       
                                   
 </body>

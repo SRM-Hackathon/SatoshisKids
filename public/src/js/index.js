@@ -25,6 +25,7 @@ messagesRef.on("child_added", snap=>{
      divpro.setAttribute('class', 'product'); 
      divs.appendChild(divpro);
      var name= document.createElement("h4");
+     name.setAttribute('id','name');
      name.innerHTML=itemname;
      var desc= document.createElement("p");
      desc.setAttribute('class', 'desc');
@@ -58,11 +59,14 @@ function closeNav() {
 function buy(){
   document.getElementById("buy").style.display="block";
 document.getElementById("sell").style.display="none";
+document.getElementById("search").style.display="block";
 }
 function sell(){
   
   document.getElementById("sell").style.display="block";
   document.getElementById("buy").style.display="none";
+  document.getElementById("search").style.display="none";
+
 }
 
 function readURL(input) {
@@ -104,3 +108,7 @@ var submit1= document.getElementById("submit1");
     document.getElementById('form').reset();
      return false;
    })
+
+   
+  
+     
