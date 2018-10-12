@@ -11,6 +11,7 @@ messagesRef.on("child_added", snap=>{
     var buy= document.getElementById("buy")
      var divs= document.createElement("div");
      divs.setAttribute('class', 'containers');
+     divs.setAttribute('id','containers');
      buy.appendChild(divs);
      var divimg= document.createElement("div");
      divimg.setAttribute('class','images');
@@ -110,5 +111,20 @@ var submit1= document.getElementById("submit1");
    })
 
    
-  
+   function myFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementsByClassName("containers");
+    console.log(ul);    
+    li = document.getElementsByTagName("h4");
+    console.log(li);    
+    for (i = 0; i < li.length; i++) {
+        if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            ul[i].style.display = "";
+        } else {
+            ul[i].style.display = "none";
+        }
+    }
+}
      
