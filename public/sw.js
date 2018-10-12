@@ -20,7 +20,7 @@ self.addEventListener('install', function(event) {
         cache.addAll([
           '/',
           '/index.html',
-          '/src/css/app.css',
+          '/src/css/styles.css',
           '/src/js/mian.js'
         ])
       })
