@@ -1,13 +1,4 @@
 // Initialize Firebase (ADD YOUR OWN DATA)
-var config = {
-    apiKey: "AIzaSyAn2FfSUVrIQWTjKKPDHi0CPi5klPmNSRA",
-    authDomain: "fasal-8efad.firebaseapp.com",
-    databaseURL: "https://fasal-8efad.firebaseio.com",
-    projectId: "fasal-8efad",
-    storageBucket: "fasal-8efad.appspot.com",
-    messagingSenderId: "953205248878"
-  };
-firebase.initializeApp(config);
 
 // Reference messages collection
 var messagesRef = firebase.database().ref('messages');
