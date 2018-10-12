@@ -1,3 +1,46 @@
+
+var messagesRef = firebase.database().ref('market');
+
+
+messagesRef.on("child_added", snap=>{
+    var itemname = snap.child("itemname").val();
+    var itemnumber = snap.child("itemnumber").val();
+    var description = snap.child("description").val();
+    var src = snap.child("src").val();
+
+    var buy= document.getElementById("buy")
+     var divs= document.createElement("div");
+     divs.setAttribute('class', 'containers');
+     buy.appendChild(divs);
+     var divimg= document.createElement("div");
+     divimg.setAttribute('class','images');
+     var img= document.createElement("img");
+     var stor=localStorage.getItem('image');
+     
+     img.setAttribute('src',src);
+     divs.appendChild(divimg);
+     divimg.appendChild(img);
+
+     var divpro= document.createElement("div");
+     divpro.setAttribute('class', 'product'); 
+     divs.appendChild(divpro);
+     var name= document.createElement("h4");
+     name.innerHTML=itemname;
+     var desc= document.createElement("p");
+     desc.setAttribute('class', 'desc');
+     desc.innerHTML=itemnumber;
+     var cost= document.createElement("h5");
+     cost.innerHTML=description;
+     var button= document.createElement("button");
+     button.setAttribute('class', 'add');
+     button.innerHTML="Add to Cart";
+     divpro.appendChild(name);
+     divpro.appendChild(desc);
+     divpro.appendChild(cost);
+     divpro.appendChild(button);
+
+})
+
 function openNav() {
     document.getElementById("mySidenav").style.width = "150px";
     document.getElementById("main").style.marginLeft = "0px";
@@ -35,43 +78,29 @@ function readURL(input) {
       };
 
       reader.readAsDataURL(input.files[0]);
-      console.log(reader.readAsDataURL(input.files[0]));
+      //console.log(reader.readAsDataURL(input.files[0]));
   }
 }
+function getInputVal(id){
+         return document.getElementById(id).value;
+       }
 var submit1= document.getElementById("submit1");
   console.log("hiiiii");
    submit1.addEventListener("click", function(){
-    
-    var buy= document.getElementById("buy")
-     var divs= document.createElement("div");
-     divs.setAttribute('class', 'containers');
-     buy.appendChild(divs);
-     var divimg= document.createElement("div");
-     divimg.setAttribute('class','images');
-     var img= document.createElement("img");
+
+    var itemname = getInputVal('iteamname');
+    var itemnumber = getInputVal('itemnumber');
+    var description = getInputVal('exampleFormControlTextarea1');
+
+    var img= document.createElement("img");
      var stor=localStorage.getItem('image');
-     
-     img.setAttribute('src', stor);
-     
-     divs.appendChild(divimg);
-     divimg.appendChild(img);
-
-     var divpro= document.createElement("div");
-     divpro.setAttribute('class', 'product'); 
-     divs.appendChild(divpro);
-     var name= document.createElement("h4");
-     name.innerHTML="hi";
-     var desc= document.createElement("p");
-     desc.setAttribute('class', 'desc');
-     desc.innerHTML="hi22";
-     var cost= document.createElement("h5");
-     cost.innerHTML="hi23";
-     var button= document.createElement("button");
-     button.setAttribute('class', 'add');
-     button.innerHTML="Add to Cart";
-     divpro.appendChild(name);
-     divpro.appendChild(desc);
-     divpro.appendChild(cost);
-     divpro.appendChild(button);
-
+    var newMessageRef = messagesRef.push();
+    newMessageRef.set({
+        itemname: itemname,
+        itemnumber:itemnumber,
+        description:description,
+        src : stor
+    });
+    document.getElementById('form').reset();
+     return false;
    })
