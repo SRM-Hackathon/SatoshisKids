@@ -1,0 +1,40 @@
+{
+	"name" : "Fasal",
+	"short_name" : "Agriculture",
+	"icons": [
+		{
+		  "src": "/src/img/icons/icon_64.ico",
+		  "type": "image/ico",
+		  "sizes": "64x64"
+		},
+		{
+		  "src": "/src/img/icons/icon_96.ico",
+		  "type": "image/ico",
+		  "sizes": "96x96"
+		},
+		{
+		  "src": "/src/img/icons/icon_128.ico",
+		  "type": "image/ico",
+		  "sizes": "128x128"
+		},
+		{
+		  "src": "/src/img/icons/icon_192.ico",
+		  "type": "image/ico",
+		  "sizes": "192x192"
+		},
+		{
+		  "src": "/src/img/icons/icon_256.ico",
+		  "type": "image/ico",
+		  "sizes": "256x256"
+		}
+	  ],
+	"start_url": "/index.html",
+  	"scope": ".",
+  	"display": "standalone",
+  	"orientation": "portrait-primary",
+  	"background_color": "#fff",
+  	"theme_color": "#3f51b5",
+  	"description": "Agriculture",
+ 		"dir": "ltr",
+  	"lang": "en-US"
+}
