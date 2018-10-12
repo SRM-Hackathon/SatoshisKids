@@ -68,6 +68,16 @@ function sell(){
   document.getElementById("search").style.display="none";
 
 }
+function buys(){
+  document.getElementById("borrowers").style.display="block";
+document.getElementById("lender").style.display="none";
+document.getElementById("search").style.display="block";
+}
+function sells(){
+  document.getElementById("borrowers").style.display="none";
+document.getElementById("lender").style.display="block";
+document.getElementById("search").style.display="none";
+}
 
 function readURL(input) {
   if (input.files && input.files[0]) {

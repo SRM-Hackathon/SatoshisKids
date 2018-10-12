@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head profile="http://www.w3.org/2005/10/profile">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="manifest" href="manifest.json">
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <meta name="msapplication-TileImage" content="/src/img/icons/icon_64.ico">
+  <meta name="msapplication-TileColor" content="#fff">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">  
+            
+</head>
+<body>
+        <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="index.html">Your Profile</a>
+                <a href="market.html">Current Loans</a>
+                <a href="#">Your Orders</a>
+                <a href="#">Credit Rating</a>
+        </div>
+   <div id="main">
+        <header>
+                <div class="container header">
+                    <div class="row">
+                        <div class="col-lg-2">
+                             
+                             
+                        </div>
+                        <div class="col-lg-4" id="side">
+                            <span class="align-left" id='headtext' style="font-size:20px;cursor:pointer; color:white; " onclick="openNav()">&#9776;</span>
+                            <text id="intro">FASAL</text>
+                        </div>
+                            
+                        <div class="col-lg-4"></div>
+                     </div>
+                    <div class= "row">
+                         
+                         <div class="col-lg-12">
+                            
+                             <h5 id="intro" class="text-center">COVERING ALL NEEDS OF AGRICULTURE INDUSTRY</h5>
+                         </div>
+                     </div>
+                    <div class="row">
+                        <div class="col-lg-4"></div>
+                        <div class="col-lg-4">
+                         <ul class="nav nav-pills justify-content-center">
+                             <li class="nav-item" id="market">
+                               <a class="nav-link" onclick="buys()" href="#">BORROWERS</a>
+                             </li>
+                             <li class="nav-item" id="bank">
+                               <a class="nav-link" onclick="sells()" href="#">LEND</a>
+                             </li>
+                         </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4"></div>
+                    
+                </div>
+            </header>
+            <div class="card align-center" style="width: 100%; border-radius:17px; margin-top:-30px; margin-top:-30px; ">
+                    <div class="card-body">
+                           <div id="lender">
+                                <div class="form-group">
+                                        <label for="itemname">Loan Amount</label>
+                                        <input type="text" class="form-control" id="iteamname" aria-describedby="emailHelp" placeholder="Enter amount to lend">
+                                    </div>
+                                
+                                <div class="form-group">
+                                        <div class="""slidecontainer">
+                                                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                                                <p>Minimum Interest: <span id="demo"></span>%</p>
+                                              </div>
+                                </div>   
+                                        
+                                                
+                                        
+                                            <div class="form-group">
+                                                <label for="itemname">Item Cost</label>
+                                                <input type="number" class="form-control" id="itemnumber" placeholder="Cost in INR">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlTextarea1">Terms and Conditions for the borrower</label>
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <label class="form-check-label" for="exampleCheck1">I agree to the terms and conditions</label>
+                                            </div>
+                                            <button id="submit1"  class="btn btn-outline-secondary">Submit</button>
+                                        </form>
+                                </div> 
+                           </div>
+                        <div id="borrowers">
+                            aditi
+                        </div>
+                            
+                    </div>
+                </div>     
+            
+          
+                  
+                  <script>
+                  var slider = document.getElementById("myRange");
+                  var output = document.getElementById("demo");
+                  output.innerHTML = slider.value;
+                  
+                  slider.oninput = function() {
+                    output.innerHTML = this.value;
+                  }
+                  </script>       
+   </div>
+   
+
+</body>
+<script src="src/js/app.js"></script>
+<script src="src/js/firebase.js"></script>
+<script src="src/js/form.js"></script>
+<script src="src/js/index.js"></script>
+</html>
