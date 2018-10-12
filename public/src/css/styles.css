@@ -3,6 +3,9 @@
     padding: 0%;
 
 }
+body{
+  padding:0 !important;
+}
 
 .header{
     background-color: #9e95e7;
@@ -63,14 +66,14 @@ nav-link{
 }
 #main {
     transition: margin-left .5s;
-    padding: 16px;
+    
     background-color: #f9f9f9;
 }
 
 #market{
      background-color: #b2abee;
-     border-top-left-radius: 15px;
-     border-bottom-left-radius: 15px;
+     border-top-left-radius: 40px;
+     border-bottom-left-radius: 40px;
      color: white;
     }
 #market :hover{
@@ -83,8 +86,8 @@ nav-link{
 }
 #bank {
     background-color: #b2abee;
-     border-top-right-radius: 15px;
-     border-bottom-right-radius: 15px;
+     border-top-right-radius: 40px;
+     border-bottom-right-radius: 40px;
      color: white;
 }
  
@@ -93,7 +96,7 @@ nav-link{
   }
   
   body{
-    background:#92bde7;
+    background:#ffffff;
     color:#485e74;
     line-height:1.6;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

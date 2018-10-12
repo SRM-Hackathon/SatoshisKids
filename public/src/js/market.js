@@ -1,11 +1,13 @@
 
 var messagesRef = firebase.database().ref('market');
 
-// messagesRef.on("child_added", snap=>{
+messagesRef.on("child_added", snap=>{
 
-//     var name = snap.child("src").val();
-//     document.getElementById('image').src=name;
-//   })
+    var name = snap.child("src").val();
+    document.getElementById('image').src=name;
+  })
+
+  
 var storageref = firebase.storage().ref();
 var file;
 function submitForm(){
