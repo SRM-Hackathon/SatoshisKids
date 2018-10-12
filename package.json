@@ -17,6 +17,7 @@
       "agriculture"
     ],
     "author": "Satoshi's kids",
+    "license": "ISC",
     "devDependencies": {
       "http-server": "^0.10.0"
     }

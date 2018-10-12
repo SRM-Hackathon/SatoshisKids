@@ -40,6 +40,8 @@ function submitForm(){
 
   // Clear form
   document.getElementById('contactForm').reset();
+
+    return false;
 }
 
 // Function to get get form values
@@ -58,23 +60,6 @@ function saveMessage(name, company, email, phone, message){
     message:message
   });
 }
-
-
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-      .register('/sw.js')
-      .then(function() {
-        console.log('Service worker registered!');
-      });
-  }
-
-  window.addEventListener('beforeinstallprompt', function(event) {
-    console.log('beforeinstallprompt fired');
-    event.preventDefault();
-    deferredPrompt = event;
-    return false;
-  });
-
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "150px";
