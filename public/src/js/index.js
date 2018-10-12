@@ -21,3 +21,15 @@ function sell(){
   document.getElementById("sell").style.display="block";
   document.getElementById("buy").style.display="none";
 }
+
+function readURL(input) { 
+         var file;
+         if (input.files && input.files[0]) {
+             var reader = new FileReader(input.files[0]);
+     
+             reader.onload = function (e) {
+                 $('#image').attr('src', e.target.result);
+             };
+      
+         }
+        }

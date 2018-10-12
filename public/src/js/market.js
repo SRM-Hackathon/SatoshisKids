@@ -38,7 +38,7 @@ function submitForm(){
 //                 file = e.target.files[0];
 //                 var storageRef = firebase.storage().ref().child('chat_photos');
 //                 // Get a reference to store file at photos/<FILENAME>.jpg
-//                 var photoRef = storageRef.child("sdsds");
+//                 var photoRef = storageRef.child("sdsds.png");
 //                 // Upload file to Firebase Storage
 //                 var uploadTask = photoRef.put(file);
 //         };
