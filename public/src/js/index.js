@@ -11,6 +11,7 @@ messagesRef.on("child_added", snap=>{
     var buy= document.getElementById("buy")
      var divs= document.createElement("div");
      divs.setAttribute('class', 'containers');
+     divs.setAttribute('id','containers');
      buy.appendChild(divs);
      var divimg= document.createElement("div");
      divimg.setAttribute('class','images');
@@ -34,6 +35,7 @@ messagesRef.on("child_added", snap=>{
      cost.innerHTML=description;
      var button= document.createElement("button");
      button.setAttribute('class', 'add');
+     button.setAttribute('onclick','addcart(this)');
      button.innerHTML="Add to Cart";
      divpro.appendChild(name);
      divpro.appendChild(desc);
@@ -119,6 +121,39 @@ var submit1= document.getElementById("submit1");
      return false;
    })
 
+
+   function addcart(e){
+       var but = e.parentElement;
+       console.log(but);
+       var na = but.getElementsByTagName("h4");
+       var name = na[0].innerHTML;
+       var pr = but.getElementsByTagName("p");
+       var price = pr[0].innerHTML;
+       //var name = but.getElementById('name');
+       //console.log(name.value);
+       var cartref = firebase.database().ref("cart");
+       cartref.push().set({
+           name:name,
+           price:price
+       });
+       return false;
+
+   }
    
-  
+   function myFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementsByClassName("containers");
+    console.log(ul);    
+    li = document.getElementsByTagName("h4");
+    console.log(li);    
+    for (i = 0; i < li.length; i++) {
+        if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            ul[i].style.display = "";
+        } else {
+            ul[i].style.display = "none";
+        }
+    }
+}
      
