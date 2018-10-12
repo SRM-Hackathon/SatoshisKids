@@ -1,4 +1,3 @@
-
 self.addEventListener('install', function(event) {
   console.log('[Service Worker] Installing Service Worker ...', event);
 });
@@ -21,7 +20,7 @@ self.addEventListener('install', function(event) {
           '/',
           '/index.html',
           '/src/css/styles.css',
-          '/src/js/mian.js'
+          '/src/js/main.js'
         ])
       })
   );
