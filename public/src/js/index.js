@@ -2,62 +2,63 @@
 var databaseref = firebase.database().ref();
 var messagesRef = databaseref.child('market');
 
-var lender = databaseref.child('lender');
+// var lender = databaseref.child('lender');
 
-lender.on("child_added", snap=>{
-    console.log("asdsa");
-    var itemname1 = snap.child("name").val();
-    var itemnumber1 = snap.child("number").val();
-    var description1 = snap.child("location").val();
-    var src = snap.child("src").val();
-    console.log(itemname1);
-    var lender = document.getElementById("lender");
-    var divs= document.createElement("div");
-     divs.setAttribute('class', 'containers');
-     divs.setAttribute('id','containers');
-     lender.appendChild(divs);
-     var divimg= document.createElement("div");
-     divimg.setAttribute('class','images');
-     var img= document.createElement("img");
-     var stor=localStorage.getItem('image');
-     img.setAttribute('id','pp');
-     if(src){
-        img.setAttribute('src',src);
-     }else{
-        img.setAttribute('src','https://firebasestorage.googleapis.com/v0/b/fasal-8efad.appspot.com/o/icon_192.ico?alt=media&token=cf9b572d-cda0-4044-9c97-91a8b6183757');
-     }
-     divs.appendChild(divimg);
-     divimg.appendChild(img);
-     var divpro= document.createElement("div");
+// lender.on("child_added", snap=>{
+//     console.log("asdsa");
+//     var itemname1 = snap.child("name").val();
+//     var itemnumber1 = snap.child("number").val();
+//     var description1 = snap.child("location").val();
+//     var src = snap.child("src").val();
+//     console.log(itemname1);
+//     var lender = document.getElementById("lender");
+//     var divs= document.createElement("div");
+//      divs.setAttribute('class', 'containers');
+//      divs.setAttribute('id','containers');
+//      lender.appendChild(divs);
+//      var divimg= document.createElement("div");
+//      divimg.setAttribute('class','images');
+//      var img= document.createElement("img");
+//      var stor=localStorage.getItem('image');
+//      img.setAttribute('id','pp');
+//      if(src){
+//         img.setAttribute('src',src);
+//      }else{
+//         img.setAttribute('src','https://firebasestorage.googleapis.com/v0/b/fasal-8efad.appspot.com/o/icon_192.ico?alt=media&token=cf9b572d-cda0-4044-9c97-91a8b6183757');
+//      }
+//      divs.appendChild(divimg);
+//      divimg.appendChild(img);
+//      var divpro= document.createElement("div");
      
-     divpro.setAttribute('class', 'product'); 
-     divs.appendChild(divpro);
-     var name= document.createElement("h4");
+//      divpro.setAttribute('class', 'product'); 
+//      divs.appendChild(divpro);
+//      var name= document.createElement("h4");
 
-     name.innerHTML=itemname1;
-     var desc= document.createElement("p");
-     desc.innerHTML=itemnumber1;
-     var cost= document.createElement("h5");
-     cost.innerHTML=description1;
-     var button= document.createElement("button");
-     button.setAttribute('class', 'add');
-     button.setAttribute('data-toggle', 'modal');
-     button.setAttribute('data-target', '#myModal');
-     button.innerHTML="Connect";
-     divpro.appendChild(name);
-     divpro.appendChild(desc);
-     divpro.appendChild(cost);
-     divpro.appendChild(button);
-})
+//      name.innerHTML=itemname1;
+//      var desc= document.createElement("p");
+//      desc.innerHTML=itemnumber1;
+//      var cost= document.createElement("h5");
+//      cost.innerHTML=description1;
+//      var button= document.createElement("button");
+//      button.setAttribute('class', 'add');
+//      button.setAttribute('data-toggle', 'modal');
+//      button.setAttribute('data-target', '#myModal');
+//      button.innerHTML="Connect";
+//      divpro.appendChild(name);
+//      divpro.appendChild(desc);
+//      divpro.appendChild(cost);
+//      divpro.appendChild(button);
+// })
 
 
 var borrow = databaseref.child('borrowers');
 
 borrow.on("child_added", snap=>{
     console.log("asdsa");
-    var itemname1 = snap.child("name").val();
-    var itemnumber1 = snap.child("number").val();
-    var description1 = snap.child("location").val();
+    var itemname1 = snap.child("amount").val();
+    var itemnumber1 = snap.child("duration").val();
+    var description1 = snap.child("intrest").val();
+    var other_q = snap.child("other_req").val();
     var src = snap.child("src").val();
     console.log(itemname1);
     var lender = document.getElementById("borrowers");
@@ -81,12 +82,14 @@ borrow.on("child_added", snap=>{
      
      divpro.setAttribute('class', 'product'); 
      divs.appendChild(divpro);
-     var name= document.createElement("h4");
-     name.innerHTML=itemname1;
-     var desc= document.createElement("p");
-     desc.innerHTML=itemnumber1;
-     var cost= document.createElement("h5");
-     cost.innerHTML=description1;
+     var name= document.createElement("h6");
+     name.innerHTML="Loan Amount:-"+itemname1;
+     var desc= document.createElement("h6");
+     desc.innerHTML="Loan Duration:-"+itemnumber1;
+     var cost= document.createElement("h6");
+     cost.innerHTML="Loan intrest:-"+description1;
+     var cost1= document.createElement("h6");
+     cost1.innerHTML="other Requirement:-"+other_q;
      var button= document.createElement("button");
      button.setAttribute('class', 'add');
      button.setAttribute('data-toggle', 'modal');
@@ -95,7 +98,7 @@ borrow.on("child_added", snap=>{
      divpro.appendChild(name);
      divpro.appendChild(desc);
      divpro.appendChild(cost);
-     divpro.appendChild(button);
+     divpro.appendChild(cost1);
 })
 
 
@@ -165,29 +168,29 @@ function sell(){
   document.getElementById("sell").style.display="block";
   document.getElementById("buy").style.display="none";
   document.getElementById("search").style.display="none";
+}
+// }
+// function buys(){
+//   document.getElementById("borrowers1").style.display="block";
+// document.getElementById("lender1").style.display="none";
+// document.getElementById("search").style.display="block";
+// }
+// function sells(){
+//   document.getElementById("borrowers1").style.display="none";
+// document.getElementById("lender1").style.display="block";
+// document.getElementById("search").style.display="none";
+// }
 
-}
-function buys(){
-  document.getElementById("borrowers1").style.display="block";
-document.getElementById("lender1").style.display="none";
-document.getElementById("search").style.display="block";
-}
-function sells(){
-  document.getElementById("borrowers1").style.display="none";
-document.getElementById("lender1").style.display="block";
-document.getElementById("search").style.display="none";
-}
-
-function buys1(){
-    document.getElementById("borrowers").style.display="block";
-  document.getElementById("lender").style.display="none";
-  document.getElementById("search").style.display="block";
-  }
-  function sells1(){
-    document.getElementById("borrowers").style.display="none";
-  document.getElementById("lender").style.display="block";
-  document.getElementById("search").style.display="none";
-  }
+// function buys1(){
+//     document.getElementById("borrowers").style.display="block";
+//   document.getElementById("lender").style.display="none";
+//   document.getElementById("search").style.display="block";
+//   }
+//   function sells1(){
+//     document.getElementById("borrowers").style.display="none";
+//   document.getElementById("lender").style.display="block";
+//   document.getElementById("search").style.display="none";
+//   }
 
 function readURL(input) {
   if (input.files && input.files[0]) {
@@ -248,18 +251,19 @@ function readURL1(input) {
 
     console.log("ankit");
     var borrowersref = databaseref.child("borrowers");
+
+    var slider = document.getElementById("myRange");
+    var intrest = slider.value;
+
     var bitemname = getInputVal('biteamname');
     var bitemnumber = getInputVal('bitemnumber');
-    var bkycdetails = getInputVal('bexampleFormControlTextarea1');
-    var bitemlocation = getInputVal('bitemlocation');
+    var other_req = getInputVal('bexampleFormControlTextarea1');
 
-    var stor=localStorage.getItem('borrowerimage');
     borrowersref.push().set({
-        name : bitemname,
-        number: bitemnumber,
-        location : bitemlocation,
-        kycdetail : bkycdetails,
-        src: stor
+        amount : bitemname,
+        intrest: intrest,
+        duration : bitemnumber,
+        other_req : other_req
     });
 
     console.log("done");

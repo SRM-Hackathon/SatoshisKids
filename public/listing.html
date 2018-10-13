@@ -20,7 +20,7 @@
       <body>
               <div id="mySidenav" class="sidenav">
                       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                      <img id="dp" src="https://www.yourfirstpatient.com/assets/default-user-avatar-thumbnail@2x-ad6390912469759cda3106088905fa5bfbadc41532fbaa28237209b1aa976fc9.png" width="60px !important">
+                      <img id="dp" src="src/img/dp.gif" width="60px !important">
                 <a href="index.html">Your Profile</a>
                 <a href="market.html">Marketplace</a>
                 <a href="loan.html">Loans</a>
@@ -50,16 +50,7 @@
                            </div>
                           <div class="row">
                               <div class="col-lg-4"></div>
-                              <div class="col-lg-4">
-                               <ul class="nav nav-pills justify-content-center">
-                                   <li class="nav-item" id="market">
-                                     <a class="nav-link" onclick="buys()" href="#">BORROWERS</a>
-                                   </li>
-                                   <li class="nav-item" id="bank">
-                                     <a class="nav-link" onclick="sells()" href="#">LENDER</a>
-                                   </li>
-                               </ul>
-                              </div>
+                              
                           </div>
                           <div class="col-lg-4"></div>
                           
@@ -74,7 +65,7 @@
                                     <form id="form" onsubmit="bsubmit()">
                                             <div class="form-group">
                                                     <label for="itemname">Loan Amount</label>
-                                                    <input type="text" class="form-control" id="iteamname" aria-describedby="emailHelp" placeholder="Enter amount to lend">
+                                                    <input type="text" class="form-control" id="biteamname" aria-describedby="emailHelp" placeholder="Enter amount to lend">
                                                 </div>
                                             
                                             <div class="form-group">
@@ -83,12 +74,12 @@
                                                             <p>Minimum Interest: <span id="demo"></span>%</p>
                                                           </div>
                                                           <div class="form-group">
-                                                                <label for="itemname">Item Cost</label>
-                                                                <input type="number" class="form-control" id="itemnumber" placeholder="Cost in INR">
+                                                                <label for="itemname">Duration</label>
+                                                                <input type="number" class="form-control" id="bitemnumber" placeholder="Duration">
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="exampleFormControlTextarea1">Terms and Conditions for the borrower</label>
-                                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                                <label for="exampleFormControlTextarea1">Other Requirement</label>
+                                                                <textarea class="form-control" id="bexampleFormControlTextarea1" rows="3"></textarea>
                                                             </div>
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
