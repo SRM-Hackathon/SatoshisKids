@@ -2,16 +2,69 @@
 var databaseref = firebase.database().ref();
 var messagesRef = databaseref.child('market');
 
-// var lender = databaseref.child('lender');
+var lender = databaseref.child('lender');
 
-// lender.on("child_added", snap=>{
+lender.on("child_added", snap=>{
+    console.log("asdsa");
+        var itemname1 = snap.child("amount").val();
+        var itemnumber1 = snap.child("duration").val();
+        var description1 = snap.child("intrest").val();
+        var other_q = snap.child("other_req").val();
+        var src = snap.child("src").val();
+        console.log(itemname1);
+        var lender = document.getElementById("lender");
+        var divs= document.createElement("div");
+         divs.setAttribute('class', 'containers');
+         divs.setAttribute('id','containers');
+         lender.appendChild(divs);
+         var divimg= document.createElement("div");
+         divimg.setAttribute('class','images');
+         var img= document.createElement("img");
+         img.setAttribute('id','pp');
+         var stor=localStorage.getItem('image');
+         if(src){
+            img.setAttribute('src',src);
+         }else{
+            img.setAttribute('src','https://firebasestorage.googleapis.com/v0/b/fasal-8efad.appspot.com/o/icon_192.ico?alt=media&token=cf9b572d-cda0-4044-9c97-91a8b6183757');
+         }
+         divs.appendChild(divimg);
+         divimg.appendChild(img);
+         var divpro= document.createElement("div");
+         
+         divpro.setAttribute('class', 'product'); 
+         divs.appendChild(divpro);
+         var name= document.createElement("h6");
+         name.innerHTML="Loan Amount:-"+itemname1;
+         var desc= document.createElement("h6");
+         desc.innerHTML="Loan Duration:-"+itemnumber1;
+         var cost= document.createElement("h6");
+         cost.innerHTML="Loan intrest:-"+description1;
+         var cost1= document.createElement("h6");
+         cost1.innerHTML="other Requirement:-"+other_q;
+         var button= document.createElement("button");
+         button.setAttribute('class', 'add');
+         button.setAttribute('data-toggle', 'modal');
+         button.setAttribute('data-target', '#myModal');
+         button.innerHTML="Connect";
+         divpro.appendChild(name);
+         divpro.appendChild(desc);
+         divpro.appendChild(cost);
+         divpro.appendChild(cost1);
+         divpro.appendChild(button);
+})
+
+
+// var borrow = databaseref.child('borrowers');
+
+// borrow.on("child_added", snap=>{
 //     console.log("asdsa");
-//     var itemname1 = snap.child("name").val();
-//     var itemnumber1 = snap.child("number").val();
-//     var description1 = snap.child("location").val();
+//     var itemname1 = snap.child("amount").val();
+//     var itemnumber1 = snap.child("duration").val();
+//     var description1 = snap.child("intrest").val();
+//     var other_q = snap.child("other_req").val();
 //     var src = snap.child("src").val();
 //     console.log(itemname1);
-//     var lender = document.getElementById("lender");
+//     var lender = document.getElementById("borrowers");
 //     var divs= document.createElement("div");
 //      divs.setAttribute('class', 'containers');
 //      divs.setAttribute('id','containers');
@@ -19,8 +72,8 @@ var messagesRef = databaseref.child('market');
 //      var divimg= document.createElement("div");
 //      divimg.setAttribute('class','images');
 //      var img= document.createElement("img");
-//      var stor=localStorage.getItem('image');
 //      img.setAttribute('id','pp');
+//      var stor=localStorage.getItem('image');
 //      if(src){
 //         img.setAttribute('src',src);
 //      }else{
@@ -32,13 +85,14 @@ var messagesRef = databaseref.child('market');
      
 //      divpro.setAttribute('class', 'product'); 
 //      divs.appendChild(divpro);
-//      var name= document.createElement("h4");
-
-//      name.innerHTML=itemname1;
-//      var desc= document.createElement("p");
-//      desc.innerHTML=itemnumber1;
-//      var cost= document.createElement("h5");
-//      cost.innerHTML=description1;
+//      var name= document.createElement("h6");
+//      name.innerHTML="Loan Amount:-"+itemname1;
+//      var desc= document.createElement("h6");
+//      desc.innerHTML="Loan Duration:-"+itemnumber1;
+//      var cost= document.createElement("h6");
+//      cost.innerHTML="Loan intrest:-"+description1;
+//      var cost1= document.createElement("h6");
+//      cost1.innerHTML="other Requirement:-"+other_q;
 //      var button= document.createElement("button");
 //      button.setAttribute('class', 'add');
 //      button.setAttribute('data-toggle', 'modal');
@@ -47,59 +101,8 @@ var messagesRef = databaseref.child('market');
 //      divpro.appendChild(name);
 //      divpro.appendChild(desc);
 //      divpro.appendChild(cost);
-//      divpro.appendChild(button);
+//      divpro.appendChild(cost1);
 // })
-
-
-var borrow = databaseref.child('borrowers');
-
-borrow.on("child_added", snap=>{
-    console.log("asdsa");
-    var itemname1 = snap.child("amount").val();
-    var itemnumber1 = snap.child("duration").val();
-    var description1 = snap.child("intrest").val();
-    var other_q = snap.child("other_req").val();
-    var src = snap.child("src").val();
-    console.log(itemname1);
-    var lender = document.getElementById("borrowers");
-    var divs= document.createElement("div");
-     divs.setAttribute('class', 'containers');
-     divs.setAttribute('id','containers');
-     lender.appendChild(divs);
-     var divimg= document.createElement("div");
-     divimg.setAttribute('class','images');
-     var img= document.createElement("img");
-     img.setAttribute('id','pp');
-     var stor=localStorage.getItem('image');
-     if(src){
-        img.setAttribute('src',src);
-     }else{
-        img.setAttribute('src','https://firebasestorage.googleapis.com/v0/b/fasal-8efad.appspot.com/o/icon_192.ico?alt=media&token=cf9b572d-cda0-4044-9c97-91a8b6183757');
-     }
-     divs.appendChild(divimg);
-     divimg.appendChild(img);
-     var divpro= document.createElement("div");
-     
-     divpro.setAttribute('class', 'product'); 
-     divs.appendChild(divpro);
-     var name= document.createElement("h6");
-     name.innerHTML="Loan Amount:-"+itemname1;
-     var desc= document.createElement("h6");
-     desc.innerHTML="Loan Duration:-"+itemnumber1;
-     var cost= document.createElement("h6");
-     cost.innerHTML="Loan intrest:-"+description1;
-     var cost1= document.createElement("h6");
-     cost1.innerHTML="other Requirement:-"+other_q;
-     var button= document.createElement("button");
-     button.setAttribute('class', 'add');
-     button.setAttribute('data-toggle', 'modal');
-     button.setAttribute('data-target', '#myModal');
-     button.innerHTML="Connect";
-     divpro.appendChild(name);
-     divpro.appendChild(desc);
-     divpro.appendChild(cost);
-     divpro.appendChild(cost1);
-})
 
 
 messagesRef.on("child_added", snap=>{
@@ -378,3 +381,6 @@ var submit1= document.getElementById("submit1");
         }
     }
 }
+
+
+
