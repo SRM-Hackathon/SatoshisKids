@@ -1,5 +1,6 @@
 
-var messagesRef = firebase.database().ref('market');
+var databaseref = firebase.database().ref();
+var messagesRef = databaseref.child('market');
 
 
 messagesRef.on("child_added", snap=>{
@@ -83,6 +84,7 @@ document.getElementById("search").style.display="none";
 
 function readURL(input) {
   if (input.files && input.files[0]) {
+      console.log("sdsda");
       var reader = new FileReader();
       var temp;
       reader.onload = function (e) {
@@ -97,6 +99,114 @@ function readURL(input) {
       //console.log(reader.readAsDataURL(input.files[0]));
   }
 }
+
+
+function readURL2(input) {
+    if (input.files && input.files[0]) {
+        console.log("sdsda");
+        var reader = new FileReader();
+        var temp;
+        reader.onload = function (e) {
+            $('#borrowerimage')
+                .attr('src', e.target.result);
+                console.log(e.target.result);
+                var temp= localStorage.setItem( 'image', e.target.result);
+                    
+        };
+  
+        reader.readAsDataURL(input.files[0]);
+        //console.log(reader.readAsDataURL(input.files[0]));
+    }
+  }
+
+
+function readURL1(input) {
+    if (input.files && input.files[0]) {
+        console.log("sdsda");
+        var reader = new FileReader();
+        var temp;
+        reader.onload = function (e) {
+            $('#lenderimage')
+                .attr('src', e.target.result);
+                console.log(e.target.result);
+                var temp= localStorage.setItem( 'image', e.target.result);
+                    
+        };
+    }
+  }
+
+  function bsubmit(){{
+
+    console.log("ankit");
+    var borrowersref = databaseref.child("borrowers");
+    var bitemname = getInputVal('biteamname');
+    var bitemnumber = getInputVal('biteamnumber');
+    var bkycdetails = getInputVal('bexampleFormControlTextarea1');
+    var bitemlocation = getInputVal('bitemlocation');
+
+    var stor=localStorage.getItem('borrowerimage');
+    borrowersref.push().set({
+        name : bitemname,
+        number: bitemnumber,
+        location : bitemlocation,
+        kycdetail : bkycdetails,
+        src: stor
+    });
+
+    console.log("done");
+    document.getElementById('form').reset();
+    return false;
+}
+
+
+function lsubmit(){
+
+    console.log("ankit");
+    var lenderref = databaseref.child("lender");
+    var litemname = getInputVal('liteamname');
+    var litemnumber = getInputVal('liteamnumber');
+    var lkycdetails = getInputVal('lexampleFormControlTextarea1');
+    var litemlocation = getInputVal('litemlocation');
+
+    var stor=localStorage.getItem('lenderimage');
+    lenderref.push().set({
+        name : litemname,
+        number: litemnumber,
+        location : litemlocation,
+        kycdetail : lkycdetails,
+        src: stor
+    });
+
+    console.log("done");
+    document.getElementById('form').reset();
+    return false;
+
+}
+
+function submitButton(){
+
+    console.log("ankit");
+    var profileref = databaseref.child("profile");
+    var itemname = getInputVal('iteamname');
+    var itemnumber = getInputVal('iteamnumber');
+    var kycdetails = getInputVal('exampleFormControlTextarea1');
+    var itemlocation = getInputVal('itemlocation');
+
+    var stor=localStorage.getItem('image');
+    profileref.push().set({
+        name : itemname,
+        number: itemnumber,
+        location : itemlocation,
+        kycdetail : kycdetails,
+        src: stor
+    });
+
+    console.log("done");
+    document.getElementById('form').reset();
+    return false;
+
+}
+
 function getInputVal(id){
          return document.getElementById(id).value;
        }
@@ -156,4 +266,4 @@ var submit1= document.getElementById("submit1");
         }
     }
 }
-     
+  }
