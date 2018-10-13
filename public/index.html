@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Fasal</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link rel="manifest" href="manifest.json">
     <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
@@ -18,10 +18,11 @@
 <body>
         <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <img id="dp" src="https://www.yourfirstpatient.com/assets/default-user-avatar-thumbnail@2x-ad6390912469759cda3106088905fa5bfbadc41532fbaa28237209b1aa976fc9.png" width="60px !important">
                 <a href="index.html">Your Profile</a>
-                <a href="market.html">Current Loans</a>
-                <a href="#">Your Orders</a>
-                <a href="#">Credit Rating</a>
+                <a href="market.html">Marketplace</a>
+                <a href="loan.html">Loans</a>
+                <a href="listing.html">Create listing</a>
         </div>
    <div id="main">
         <header>
@@ -42,8 +43,8 @@
                          
                          <div class="col-lg-12">
                              
-                             <h6 id="intro">FASAL</h6>
-                             <h5 id="intro" class="text-center">COVERING ALL NEEDS OF AGRICULTURE INDUSTRY</h5>
+                             
+                             <h6 id="intro" class="text-center">COVERING ALL NEEDS OF AGRICULTURE INDUSTRY</h6>
                          </div>
                      </div>
                     <div class="row">
@@ -51,10 +52,10 @@
                         <div class="col-lg-4">
                          <ul class="nav nav-pills justify-content-center">
                              <li class="nav-item" id="market">
-                               <a class="nav-link" href="#">Marketplace</a>
+                               <a class="nav-link" href="market.html">Marketplace</a>
                              </li>
                              <li class="nav-item" id="bank">
-                               <a class="nav-link" href="#">Bank</a>
+                               <a class="nav-link" href="loan.html">Bank</a>
                              </li>
                          </ul>
                         </div>
@@ -63,54 +64,39 @@
                     
                 </div>
             </header> 
+            <div id="sell" >
+                <form id="form">
+                  <h6>Please Complete your registration first</h6>
+            <div class="form-group">
+                    
+                    <img id="image" src="https://www.yourfirstpatient.com/assets/default-user-avatar-thumbnail@2x-ad6390912469759cda3106088905fa5bfbadc41532fbaa28237209b1aa976fc9.png" alt="your image" />
+                    <input type='file' onchange="readURL(this);" />
+            </div>
+                        
+                <div class="form-group">
+                        <label for="itemname">Name</label>
+                        <input type="text" class="form-control" id="iteamname" aria-describedby="emailHelp" placeholder="Full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="itemname">Phone Number</label>
+                        <input type="text" class="form-control" id="iteamname" aria-describedby="emailHelp" placeholder="Type your contact number">
+                    </div>
+                    <div class="form-group">
+                        <label for="itemname">Location</label>
+                        <input type="text" class="form-control" id="itemnumber" placeholder="Location">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">KYC Details</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">I agree to the terms and conditions</label>
+                    </div>
+                    <button id="submit1"  class="btn btn-outline-secondary">Submit</button>
+                </form>
+        </div> 
    </div>
-   <div style="display:none "class="container">
-        <div class="wrapper">
-          <div class="contact">
-            <h3>Email Us</h3>
-            <div class="alert">Your message has been sent</div>
-            <form id="contactForm" onsubmit="return submitForm()">
-              <p>
-                <label>Name</label>
-                <input type="text" name="name" id="name" required>
-              </p>
-              <p>
-                <label>Company</label>
-                <input type="text" name="company" id="company" required>
-              </p>
-              <p>
-                <label>Email Address</label>
-                <input type="email" name="email" id="email" required>
-              </p>
-              <p>
-                <label>Phone Number</label>
-                <input type="text" name="phone" id="phone" required>
-              </p>
-              <p class="full">
-                <label>Message</label>
-                <textarea name="message" rows="5" id="message" required></textarea>
-              </p>
-              <p class="full">
-                <button type="submit">Submit</button>
-              </p>
-            </form>
-          </div>
-          <table>
-            <thead>
-              <tr>
-                <td>name</td>
-                <td>company</td>
-                <td>phone</td>
-                <td>message</td>
-                <td>email</td>
-              </tr>
-            </thead>
-            <tbody id="tablebody">
-              
-            </tbody>
-          </table>
-        </div>
-      </div>
 
 </body>
 <script src="src/js/app.js"></script>

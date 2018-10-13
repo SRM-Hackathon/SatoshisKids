@@ -256,7 +256,7 @@ size :hover{
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  appearance: none;
+  
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -270,4 +270,8 @@ size :hover{
   border-radius: 50%;
   background: #9e95e7;
   cursor: pointer;
+}
+#dp{
+  padding-left: 30px;
+  width:100px;
 }

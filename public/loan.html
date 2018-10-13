@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Finance</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link rel="manifest" href="manifest.json">
     <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
@@ -18,10 +18,11 @@
 <body>
         <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <img id="dp" src="https://www.yourfirstpatient.com/assets/default-user-avatar-thumbnail@2x-ad6390912469759cda3106088905fa5bfbadc41532fbaa28237209b1aa976fc9.png" width="60px !important">
                 <a href="index.html">Your Profile</a>
-                <a href="market.html">Current Loans</a>
-                <a href="#">Your Orders</a>
-                <a href="#">Credit Rating</a>
+                <a href="market.html">Marketplace</a>
+                <a href="loan.html">Loans</a>
+                <a href="listing.html">Create listing</a>
         </div>
    <div id="main">
         <header>
@@ -53,7 +54,7 @@
                                <a class="nav-link" onclick="buys()" href="#">BORROWERS</a>
                              </li>
                              <li class="nav-item" id="bank">
-                               <a class="nav-link" onclick="sells()" href="#">LEND</a>
+                               <a class="nav-link" onclick="sells()" href="#">LENDER</a>
                              </li>
                          </ul>
                         </div>
@@ -65,38 +66,45 @@
             <div class="card align-center" style="width: 100%; border-radius:17px; margin-top:-30px; margin-top:-30px; ">
                     <div class="card-body">
                            <div id="lender">
-                                <div class="form-group">
-                                        <label for="itemname">Loan Amount</label>
-                                        <input type="text" class="form-control" id="iteamname" aria-describedby="emailHelp" placeholder="Enter amount to lend">
-                                    </div>
-                                
-                                <div class="form-group">
-                                        <div class="""slidecontainer">
-                                                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                                                <p>Minimum Interest: <span id="demo"></span>%</p>
-                                              </div>
-                                </div>   
+                                <div class="containers">
+                                        <div class="images">
+                                          <img id="dp" src="https://www.yourfirstpatient.com/assets/default-user-avatar-thumbnail@2x-ad6390912469759cda3106088905fa5bfbadc41532fbaa28237209b1aa976fc9.png" />
+                                        </div>
                                         
-                                                
                                         
-                                            <div class="form-group">
-                                                <label for="itemname">Item Cost</label>
-                                                <input type="number" class="form-control" id="itemnumber" placeholder="Cost in INR">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleFormControlTextarea1">Terms and Conditions for the borrower</label>
-                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                            </div>
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                <label class="form-check-label" for="exampleCheck1">I agree to the terms and conditions</label>
-                                            </div>
-                                            <button id="submit1"  class="btn btn-outline-secondary">Submit</button>
-                                        </form>
-                                </div> 
+                                        <div class="product">
+                                          
+                                          <h4>Lender's Name <button style="background-color:white;"class="like"><span>&#9989</span></button></h4>
+                                          <p>Investment amount </p>
+                                          <h5>$150</h5>
+                                          <p class="desc">machinery is very good please buy it. ok thanks.</p>
+                                          
+                                         <button style="color:blueviolet;" class="add">Connect</button>
+                                            
+                                          
+                                        </div>
+                                      </div>
                            </div>
+                                
                         <div id="borrowers">
-                            aditi
+                                <div class="containers">
+                                        <div class="images">
+                                          <img id="dp" src="https://www.yourfirstpatient.com/assets/default-user-avatar-thumbnail@2x-ad6390912469759cda3106088905fa5bfbadc41532fbaa28237209b1aa976fc9.png" />
+                                        </div>
+                                        
+                                        
+                                        <div class="product">
+                                          
+                                          <h4>Farmer's Name <button style="background-color:white;"class="like"><span>&#9989</span></button></h4>
+                                          <p>Loan Requirement </p>
+                                          <h5>$150</h5>
+                                          <p class="desc">machinery is very good please buy it. ok thanks.</p>
+                                          
+                                         <button style="color:blueviolet;" class="add">Connect</button>
+                                            
+                                          
+                                        </div>
+                                      </div>
                         </div>
                             
                     </div>
