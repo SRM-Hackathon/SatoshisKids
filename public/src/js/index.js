@@ -2,6 +2,93 @@
 var databaseref = firebase.database().ref();
 var messagesRef = databaseref.child('market');
 
+var lender = databaseref.child('lender');
+
+lender.on("child_added", snap=>{
+    console.log("asdsa");
+    var itemname1 = snap.child("name").val();
+    var itemnumber1 = snap.child("number").val();
+    var description1 = snap.child("location").val();
+    var src = snap.child("src").val();
+    console.log(itemname1);
+    var lender = document.getElementById("lender");
+    var divs= document.createElement("div");
+     divs.setAttribute('class', 'containers');
+     divs.setAttribute('id','containers');
+     lender.appendChild(divs);
+     var divimg= document.createElement("div");
+     divimg.setAttribute('class','images');
+     var img= document.createElement("img");
+     var stor=localStorage.getItem('image');
+     if(src){
+        img.setAttribute('src',src);
+     }else{
+        img.setAttribute('src','https://firebasestorage.googleapis.com/v0/b/fasal-8efad.appspot.com/o/market%2Fbus-logo-w640.png?alt=media&token=52e272ff-4f3d-45e4-8697-766a1a416615');
+     }
+     divs.appendChild(divimg);
+     divimg.appendChild(img);
+     var divpro= document.createElement("div");
+     
+     divpro.setAttribute('class', 'product'); 
+     divs.appendChild(divpro);
+     var name= document.createElement("h4");
+     name.innerHTML=itemname1;
+     var desc= document.createElement("p");
+     desc.innerHTML=itemnumber1;
+     var cost= document.createElement("h5");
+     cost.innerHTML=description1;
+     var button= document.createElement("button");
+     button.setAttribute('class', 'add');
+     button.innerHTML="Connect";
+     divpro.appendChild(name);
+     divpro.appendChild(desc);
+     divpro.appendChild(cost);
+     divpro.appendChild(button);
+})
+var borrow = databaseref.child('borrowers');
+
+borrow.on("child_added", snap=>{
+    console.log("asdsa");
+    var itemname1 = snap.child("name").val();
+    var itemnumber1 = snap.child("number").val();
+    var description1 = snap.child("location").val();
+    var src = snap.child("src").val();
+    console.log(itemname1);
+    var lender = document.getElementById("borrowers");
+    var divs= document.createElement("div");
+     divs.setAttribute('class', 'containers');
+     divs.setAttribute('id','containers');
+     lender.appendChild(divs);
+     var divimg= document.createElement("div");
+     divimg.setAttribute('class','images');
+     var img= document.createElement("img");
+     var stor=localStorage.getItem('image');
+     if(src){
+        img.setAttribute('src',src);
+     }else{
+        img.setAttribute('src','https://firebasestorage.googleapis.com/v0/b/fasal-8efad.appspot.com/o/market%2Fbus-logo-w640.png?alt=media&token=52e272ff-4f3d-45e4-8697-766a1a416615');
+     }
+     divs.appendChild(divimg);
+     divimg.appendChild(img);
+     var divpro= document.createElement("div");
+     
+     divpro.setAttribute('class', 'product'); 
+     divs.appendChild(divpro);
+     var name= document.createElement("h4");
+     name.innerHTML=itemname1;
+     var desc= document.createElement("p");
+     desc.innerHTML=itemnumber1;
+     var cost= document.createElement("h5");
+     cost.innerHTML=description1;
+     var button= document.createElement("button");
+     button.setAttribute('class', 'add');
+     button.innerHTML="Connect";
+     divpro.appendChild(name);
+     divpro.appendChild(desc);
+     divpro.appendChild(cost);
+     divpro.appendChild(button);
+})
+
 
 messagesRef.on("child_added", snap=>{
     var itemname = snap.child("itemname").val();
@@ -9,7 +96,8 @@ messagesRef.on("child_added", snap=>{
     var description = snap.child("description").val();
     var src = snap.child("src").val();
 
-    var buy= document.getElementById("buy")
+    console.log("mjkiu");
+    var buy= document.getElementById("buy");
      var divs= document.createElement("div");
      divs.setAttribute('class', 'containers');
      divs.setAttribute('id','containers');
@@ -42,7 +130,6 @@ messagesRef.on("child_added", snap=>{
      divpro.appendChild(desc);
      divpro.appendChild(cost);
      divpro.appendChild(button);
-
 })
 
 function openNav() {
@@ -126,21 +213,23 @@ function readURL1(input) {
         var reader = new FileReader();
         var temp;
         reader.onload = function (e) {
-            $('#lenderimage')
-                .attr('src', e.target.result);
-                console.log(e.target.result);
+            $('#lenderimage').attr('src', e.target.result);
+                console.log("dsasd"+e.target.result);
                 var temp= localStorage.setItem( 'image', e.target.result);
                     
         };
+        
+        reader.readAsDataURL(input.files[0]);
+        //console.log(reader.readAsDataURL(input.files[0]));
     }
   }
 
-  function bsubmit(){{
+  function bsubmit(){
 
     console.log("ankit");
     var borrowersref = databaseref.child("borrowers");
     var bitemname = getInputVal('biteamname');
-    var bitemnumber = getInputVal('biteamnumber');
+    var bitemnumber = getInputVal('bitemnumber');
     var bkycdetails = getInputVal('bexampleFormControlTextarea1');
     var bitemlocation = getInputVal('bitemlocation');
 
@@ -164,10 +253,9 @@ function lsubmit(){
     console.log("ankit");
     var lenderref = databaseref.child("lender");
     var litemname = getInputVal('liteamname');
-    var litemnumber = getInputVal('liteamnumber');
+    var litemnumber = getInputVal('litemnumber');
     var lkycdetails = getInputVal('lexampleFormControlTextarea1');
     var litemlocation = getInputVal('litemlocation');
-
     var stor=localStorage.getItem('lenderimage');
     lenderref.push().set({
         name : litemname,
@@ -266,4 +354,3 @@ var submit1= document.getElementById("submit1");
         }
     }
 }
-  }
