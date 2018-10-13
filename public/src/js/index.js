@@ -23,7 +23,7 @@ lender.on("child_added", snap=>{
      if(src){
         img.setAttribute('src',src);
      }else{
-        img.setAttribute('src','https://firebasestorage.googleapis.com/v0/b/fasal-8efad.appspot.com/o/market%2Fbus-logo-w640.png?alt=media&token=52e272ff-4f3d-45e4-8697-766a1a416615');
+        img.setAttribute('src','https://firebasestorage.googleapis.com/v0/b/fasal-8efad.appspot.com/o/icon_64.ico?alt=media&token=912e58a8-20ef-4afe-b41b-abbacc8538a4');
      }
      divs.appendChild(divimg);
      divimg.appendChild(img);
@@ -32,6 +32,7 @@ lender.on("child_added", snap=>{
      divpro.setAttribute('class', 'product'); 
      divs.appendChild(divpro);
      var name= document.createElement("h4");
+
      name.innerHTML=itemname1;
      var desc= document.createElement("p");
      desc.innerHTML=itemnumber1;
@@ -70,7 +71,7 @@ borrow.on("child_added", snap=>{
      if(src){
         img.setAttribute('src',src);
      }else{
-        img.setAttribute('src','https://firebasestorage.googleapis.com/v0/b/fasal-8efad.appspot.com/o/market%2Fbus-logo-w640.png?alt=media&token=52e272ff-4f3d-45e4-8697-766a1a416615');
+        img.setAttribute('src','https://firebasestorage.googleapis.com/v0/b/fasal-8efad.appspot.com/o/icon_64.ico?alt=media&token=912e58a8-20ef-4afe-b41b-abbacc8538a4');
      }
      divs.appendChild(divimg);
      divimg.appendChild(img);
@@ -165,13 +166,13 @@ function sell(){
 
 }
 function buys(){
-  document.getElementById("borrowers").style.display="block";
-document.getElementById("lender").style.display="none";
+  document.getElementById("borrowers1").style.display="block";
+document.getElementById("lender1").style.display="none";
 document.getElementById("search").style.display="block";
 }
 function sells(){
-  document.getElementById("borrowers").style.display="none";
-document.getElementById("lender").style.display="block";
+  document.getElementById("borrowers1").style.display="none";
+document.getElementById("lender1").style.display="block";
 document.getElementById("search").style.display="none";
 }
 
