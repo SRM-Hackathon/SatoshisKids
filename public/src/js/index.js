@@ -40,12 +40,16 @@ lender.on("child_added", snap=>{
      cost.innerHTML=description1;
      var button= document.createElement("button");
      button.setAttribute('class', 'add');
+     button.setAttribute('data-toggle', 'modal');
+     button.setAttribute('data-target', '#myModal');
      button.innerHTML="Connect";
      divpro.appendChild(name);
      divpro.appendChild(desc);
      divpro.appendChild(cost);
      divpro.appendChild(button);
 })
+
+
 var borrow = databaseref.child('borrowers');
 
 borrow.on("child_added", snap=>{
@@ -84,6 +88,8 @@ borrow.on("child_added", snap=>{
      cost.innerHTML=description1;
      var button= document.createElement("button");
      button.setAttribute('class', 'add');
+     button.setAttribute('data-toggle', 'modal');
+     button.setAttribute('data-target', '#myModal');
      button.innerHTML="Connect";
      divpro.appendChild(name);
      divpro.appendChild(desc);
