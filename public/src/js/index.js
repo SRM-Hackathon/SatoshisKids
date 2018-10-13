@@ -23,7 +23,7 @@ lender.on("child_added", snap=>{
      if(src){
         img.setAttribute('src',src);
      }else{
-        img.setAttribute('src','https://firebasestorage.googleapis.com/v0/b/fasal-8efad.appspot.com/o/icon_64.ico?alt=media&token=912e58a8-20ef-4afe-b41b-abbacc8538a4');
+        img.setAttribute('src','https://firebasestorage.googleapis.com/v0/b/fasal-8efad.appspot.com/o/icon_192.ico?alt=media&token=cf9b572d-cda0-4044-9c97-91a8b6183757');
      }
      divs.appendChild(divimg);
      divimg.appendChild(img);
@@ -63,11 +63,12 @@ borrow.on("child_added", snap=>{
      var divimg= document.createElement("div");
      divimg.setAttribute('class','images');
      var img= document.createElement("img");
+     img.setAttribute('id','dp');
      var stor=localStorage.getItem('image');
      if(src){
         img.setAttribute('src',src);
      }else{
-        img.setAttribute('src','https://firebasestorage.googleapis.com/v0/b/fasal-8efad.appspot.com/o/icon_64.ico?alt=media&token=912e58a8-20ef-4afe-b41b-abbacc8538a4');
+        img.setAttribute('src','https://firebasestorage.googleapis.com/v0/b/fasal-8efad.appspot.com/o/icon_192.ico?alt=media&token=cf9b572d-cda0-4044-9c97-91a8b6183757');
      }
      divs.appendChild(divimg);
      divimg.appendChild(img);
@@ -169,6 +170,17 @@ function sells(){
 document.getElementById("lender1").style.display="block";
 document.getElementById("search").style.display="none";
 }
+
+function buys1(){
+    document.getElementById("borrowers").style.display="block";
+  document.getElementById("lender").style.display="none";
+  document.getElementById("search").style.display="block";
+  }
+  function sells1(){
+    document.getElementById("borrowers").style.display="none";
+  document.getElementById("lender").style.display="block";
+  document.getElementById("search").style.display="none";
+  }
 
 function readURL(input) {
   if (input.files && input.files[0]) {
