@@ -20,6 +20,7 @@ lender.on("child_added", snap=>{
      divimg.setAttribute('class','images');
      var img= document.createElement("img");
      var stor=localStorage.getItem('image');
+     img.setAttribute('id','pp');
      if(src){
         img.setAttribute('src',src);
      }else{
@@ -67,7 +68,7 @@ borrow.on("child_added", snap=>{
      var divimg= document.createElement("div");
      divimg.setAttribute('class','images');
      var img= document.createElement("img");
-     img.setAttribute('id','dp');
+     img.setAttribute('id','pp');
      var stor=localStorage.getItem('image');
      if(src){
         img.setAttribute('src',src);
@@ -114,7 +115,7 @@ messagesRef.on("child_added", snap=>{
      divimg.setAttribute('class','images');
      var img= document.createElement("img");
      var stor=localStorage.getItem('image');
-     
+     img.setAttribute('id','pp');
      img.setAttribute('src',src);
      divs.appendChild(divimg);
      divimg.appendChild(img);
